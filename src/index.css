@@ -2,10 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .light {
-    background-color: bisque;
+    background-color: white;
+    color: black
 }
 
 .dark {
-    background-color: aquamarine;
+    background-color: black;
+    color: white;
 }

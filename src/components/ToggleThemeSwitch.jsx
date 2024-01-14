@@ -2,23 +2,26 @@ import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 
 
-import {Switch} from "@nextui-org/react";
-import {MoonIcon} from "./MoonIcon";
-import {SunIcon} from "./SunIcon";
+import { FaMoon } from 'react-icons/fa'
+
+import { MdSunny } from 'react-icons/md'
 
 export const ToggleThemeSwitch = () => {
 
-    const {theme, toggleTheme} = useContext(ThemeContext)
-
+    const { theme,toggleTheme} = useContext(ThemeContext)
+    
     return (
-        <Switch
-          defaultSelected
-          size="lg"
-          color="success"
-          startContent={<SunIcon />}
-          endContent={<MoonIcon />}
-        >
-          Dark mode
-        </Switch>
+        <div>
+          {theme === 'light' 
+          ?
+          <button onClick={toggleTheme} className="rounded p-2 bg-indigo-500">
+            <FaMoon className="text-white"/>
+          </button>
+          :
+          <button onClick={toggleTheme} className="rounded p-2 bg-yellow-500">
+            <MdSunny className="text-white"/>
+          </button>
+        }
+        </div>
       );
 }
